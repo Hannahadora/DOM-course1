@@ -1,104 +1,222 @@
-// EXAMINE THE DOCUMENT OBJECT //
+// // EXAMINE THE DOCUMENT OBJECT //
 
-// console.dir(document);
-// console.log(document.domain);
-// console.log(document.URL);
-// console.log(document.title);
-// document.title = 123;
-// console.log(document.doctype);
-// console.log(document.head);
-// console.log(document.body);
-// console.log(document.all);
-// console.log(document.all[10]);
-// document.all[10].textContent = 'Hello'
-// console.log(document.forms);
-// console.log(document.forms[0]);
-// console.log(document.links);
-// console.log(document.images);
+// // console.dir(document);
+// // console.log(document.domain);
+// // console.log(document.URL);
+// // console.log(document.title);
+// // document.title = 123;
+// // console.log(document.doctype);
+// // console.log(document.head);
+// // console.log(document.body);
+// // console.log(document.all);
+// // console.log(document.all[10]);
+// // document.all[10].textContent = 'Hello'
+// // console.log(document.forms);
+// // console.log(document.forms[0]);
+// // console.log(document.links);
+// // console.log(document.images);
 
-// GET ELEMENT BY ID
+// // GET ELEMENT BY ID
 
-// console.log(document.getElementById('header-title'));
-// var headerTitle = document.getElementById('header-title');
-// var header = document.getElementById('main-header');
-// console.log(headerTitle);
-// headerTitle.textContent = 'Hello'
-// headerTitle.innerText = 'Goodbye'
-// console.log(headerTitle.textContent); ...does not regard styling
-// console.log(headerTitle.innerText); regards styling
-// headerTitle.innerHTML = '<h3>Hello</h3>';
-// header.style.borderBottom = 'solid 3px #000';
+// // console.log(document.getElementById('header-title'));
+// // var headerTitle = document.getElementById('header-title');
+// // var header = document.getElementById('main-header');
+// // console.log(headerTitle);
+// // headerTitle.textContent = 'Hello'
+// // headerTitle.innerText = 'Goodbye'
+// // console.log(headerTitle.textContent); ...does not regard styling
+// // console.log(headerTitle.innerText); regards styling
+// // headerTitle.innerHTML = '<h3>Hello</h3>';
+// // header.style.borderBottom = 'solid 3px #000';
 
-// GET ELEMENTS BY CLASS NAME
+// // GET ELEMENTS BY CLASS NAME
 
-// var items = document.getElementsByClassName('list-group-item');
-// console.log(items);
-// console.log(items[1]);
-// items[1].textContent = 'Hello 2';
-// items[1].style.fontWeight = 'bold';
-// items[1].style.backgroundColor = 'yellow';
+// // var items = document.getElementsByClassName('list-group-item');
+// // console.log(items);
+// // console.log(items[1]);
+// // items[1].textContent = 'Hello 2';
+// // items[1].style.fontWeight = 'bold';
+// // items[1].style.backgroundColor = 'yellow';
 
-// // items.style.backgroundColor = '#f4f4f4';  GIVES ERROR
+// // // items.style.backgroundColor = '#f4f4f4';  GIVES ERROR
 
-// for (var i = 0; i < items.length; i++) {
-//     items[i].style.backgroundColor = '#f4f4f4';
+// // for (var i = 0; i < items.length; i++) {
+// //     items[i].style.backgroundColor = '#f4f4f4';
+// // }
+
+
+// // GET ELEMENTS BY TAG NAME //
+
+// // var li = document.getElementsByTagName('li');
+// // console.log(li);
+// // console.log(li[1]);
+// // li[1].textContent = 'Hello 2';
+// // li[1].style.fontWeight = 'bold';
+// // li[1].style.backgroundColor = 'yellow';
+
+// // // items.style.backgroundColor = '#f4f4f4';  GIVES ERROR
+
+// // for (var i = 0; i < li.length; i++) {
+// //     li[i].style.backgroundColor = '#f4f4f4';
+// // }
+
+
+// // QUERY SELECTOR //
+
+// // var header = document.querySelector('#main-header');
+// // header.style.borderBottom = 'solid 4px #000';
+
+// // var input = document.querySelector('input')
+// // input.value = 'Hello World';
+
+// // var submit = document.querySelector('input[type="submit"]');
+// // submit.value = "send";
+
+// // var item = document.querySelector('.list-group-item');
+// // item.style.color = 'red';    //SELECTS THE FIRST ONE//
+
+// // var lastItem = document.querySelector
+// // ('.list-group-item:last-child');    //SELECTS THE last ONE//
+// // lastItem.style.color = 'blue';
+
+// // var secondItem = document.querySelector
+// // ('.list-group-item:nth-child(2)');   //SELECTS THE second ONE//
+// // secondItem.style.color = 'coral';
+
+
+// // QUERY SELECTOR ALL //
+
+// // var titles = document.querySelectorAll('.title');
+
+// // console.log(titles);
+// // titles[0].textContent = 'Hello';
+
+// // var odd = document.querySelectorAll('li:nth-child(odd)');
+
+// // for (var i = 0; i < odd.length; i++) {
+// //     odd[i].style.backgroundColor = '#f4f4f4'
+// // }
+
+// // var even = document.querySelectorAll('li:nth-child(even)');
+
+// // for (var i = 0; i < even.length; i++) {
+// //     even[i].style.backgroundColor = 'red'
+// // }
+
+
+// // TRAVERSING THE DOM //
+
+// var itemList = document.querySelector('#items');
+
+// // PARENT NODE
+// // console.log(itemList.parentNode);
+// // itemList.parentNode.style.backgroundcolor = '#f4f4f4';
+// // console.log(itemList.parentNode.parentNode.parentNode);
+
+// // PARENT ElEMENT
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.backgroundcolor = '#f4f4f4';
+// console.log(itemList.parentElement.parentElement.parentElement);
+
+// CHILD NODE
+// console.log(itemList.childNodes) is not adviceable...it creates break
+
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
+// itemList.children[1].style.backgroundColor = 'yellow';
+
+// // FIRST CHILD //
+// console.log(itemList.firstChild);
+
+// // FIRST ELEMENT CHILD //
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = 'Hello';
+
+// // LAST CHILD //
+// console.log(itemList.lastChild);
+
+// // LAST ELEMENT CHILD //
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent = 'Hello';
+
+// // NEXT SIBLING
+// console.log(itemList.nextSibling)
+
+// // NEXT ELEMENT SIBLING
+// console.log(itemList.nextElementSibling)
+
+// // PREVIOUS SIBLING
+// console.log(itemList.previousSibling)
+
+// // PREVIOUS ELEMENT SIBLING
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.border = '1px solid red';
+
+// CREATE ELEMENT //
+
+// Create a div //
+// var newDiv = document.createElement('div');
+
+// // Add class
+// newDiv.className = 'hello';
+
+// // Add id
+// newDiv.id = 'hell01'
+
+// // Add attribute
+// newDiv.setAttribute('title', 'Hello div')
+
+// // Create text node
+// var newDivText = document.createTextNode('Hello world');
+
+// // Add Text to div
+// newDiv.appendChild(newDivText)
+
+// var container = document.querySelector('header .container');
+// var h1 = document.querySelector('header h1');
+
+// console.log(newDiv);
+
+// newDiv.style.fontSize = '30px';
+
+// container.insertBefore(newDiv, h1);
+
+// var button = document.getElementById('button').addEventListener
+// ('click', buttonClick);
+
+// function buttonClick(e) {
+    // console.log('Button Clicked');
+// document.getElementById('header-title').textContent = 'changed';
+// document.querySelector('#main').style.backgroundColor = 'red';
+// console.log(e);
+
+// console.log(e.target);
+// console.log(e.target.id);
+// console.log(e.target.className);
+// console.log(e.target.classList);
+// var output = document.getElementById('output');
+// output.innerHTML = '<h3>'+e.target.id+'</h3>';
+
+// console.log(e.type);
+
+// console.log(e.clientX)
+// console.log(e.clientY)
+
+// console.log(e.offsetX);
+// console.log(e.offsetY);
+
+// console.log(e.altKey);
+// console.log(e.ctrlKey);
+// console.log(e.shiftKey); 
 // }
 
+var button = document.getElementById('button');
 
-// GET ELEMENTS BY TAG NAME //
+// button.addEventListener('click', runEvent);
+// button.addEventListener('dblclick', runEvent);
+// button.addEventListener('mousedown', runEvent);
+// button.addEventListener('mouseup', runEvent);
 
-// var li = document.getElementsByTagName('li');
-// console.log(li);
-// console.log(li[1]);
-// li[1].textContent = 'Hello 2';
-// li[1].style.fontWeight = 'bold';
-// li[1].style.backgroundColor = 'yellow';
-
-// // items.style.backgroundColor = '#f4f4f4';  GIVES ERROR
-
-// for (var i = 0; i < li.length; i++) {
-//     li[i].style.backgroundColor = '#f4f4f4';
-// }
-
-
-// QUERY SELECTOR //
-
-// var header = document.querySelector('#main-header');
-// header.style.borderBottom = 'solid 4px #000';
-
-// var input = document.querySelector('input')
-// input.value = 'Hello World';
-
-// var submit = document.querySelector('input[type="submit"]');
-// submit.value = "send";
-
-// var item = document.querySelector('.list-group-item');
-// item.style.color = 'red';    //SELECTS THE FIRST ONE//
-
-// var lastItem = document.querySelector
-// ('.list-group-item:last-child');    //SELECTS THE last ONE//
-// lastItem.style.color = 'blue';
-
-// var secondItem = document.querySelector
-// ('.list-group-item:nth-child(2)');   //SELECTS THE second ONE//
-// secondItem.style.color = 'coral';
-
-
-// QUERY SELECTOR ALL //
-
-// var titles = document.querySelectorAll('.title');
-
-// console.log(titles);
-// titles[0].textContent = 'Hello';
-
-// var odd = document.querySelectorAll('li:nth-child(odd)');
-
-// for (var i = 0; i < odd.length; i++) {
-//     odd[i].style.backgroundColor = '#f4f4f4'
-// }
-
-// var even = document.querySelectorAll('li:nth-child(even)');
-
-// for (var i = 0; i < even.length; i++) {
-//     even[i].style.backgroundColor = 'red'
-// }
+function runEvent(e) {
+    console.log('EVENT TYPE: '+e.type);
+}
